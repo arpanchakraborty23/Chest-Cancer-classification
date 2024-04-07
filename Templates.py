@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 
-project_name = "signLanguage"
+project_name = "src"
 
 
 list_of_files = [
@@ -13,6 +13,7 @@ list_of_files = [
     ".github/workflows/ci.yml",
     "data/.gitkeep",
     "docs/.gitkeep",
+    "config/config.yaml"
     f"{project_name}/__init__.py",
     f"{project_name}/components/__init__.py",
     f"{project_name}/components/data_ingestion.py",
