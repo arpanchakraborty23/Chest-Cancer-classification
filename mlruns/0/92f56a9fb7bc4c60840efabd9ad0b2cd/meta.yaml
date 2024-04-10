@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Chest-Cancer-classification/mlruns/0/92f56a9fb7bc4c60840efabd9ad0b2cd/artifacts
+end_time: 1712739835270
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 92f56a9fb7bc4c60840efabd9ad0b2cd
+run_name: exultant-auk-113
+run_uuid: 92f56a9fb7bc4c60840efabd9ad0b2cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712739803654
+status: 3
+tags: []
+user_id: ac

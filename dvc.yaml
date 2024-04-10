@@ -1,0 +1,57 @@
+stages:
+  data_ingestion:
+    cmd: python src\components\data_ingestion.py
+    deps:
+      - src\pipline\data_ingestion_pipline.py
+      - config\config.yaml
+    outs:
+      - artifacts\data_ingestion\Chest-CT-Scan-data
+
+  base_model:
+    cmd: python src\components\base_model.py
+    deps:
+      -  src\pipeline\base_model_pipline.py
+      -  config\config.yaml
+
+    param:
+      - IMAGE_SIZE
+      - INCLUDE_TOP
+      - CLASSES 
+      - WEIGHTS
+      - LEARNING_RATE
+    outs:
+      - artifacts\base_model
+      
+
+  model_train:
+    cmd: python src\components\model_trainer.py
+    deps:
+      - src\pipeline\model_train_pipeline.py
+      - config\config.yaml
+      - artifacts\data_ingestion\Chest-CT-Scan-data
+      - artifacts\base_model
+    param:
+      - IMAGE_SIZE
+      - EPOCHS
+      - BATCH_SIZE
+      - AUGMENTATION
+    outs:
+      -  model\model.h5 
+
+  Evaluation:
+    cmd: python src\components\model_evaluation.py
+    deps:
+      - src\pipeline\model_eval_pipline.py
+      - config\config.yaml
+      - artifacts\data_ingestion\Chest-CT-Scan-data
+      -  model\model.h5 
+    param:
+     - IMAGE_SIZE
+     - BATCH_SIZE
+
+    metrics:
+    - scores.json:
+        cache: flase 
+
+
+

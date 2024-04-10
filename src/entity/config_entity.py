@@ -33,5 +33,15 @@ class ModelTrainConfig:
     batch_size: int
     image_size: bool
     augmentation:list    
+
+@dataclass
+class EvaluationConfig:
+    path_of_model: Path
+    train_data:Path
+    all_params: dict
+    mlflow_url:str
+    image_size:list
+    batch_size:int
+
     
      

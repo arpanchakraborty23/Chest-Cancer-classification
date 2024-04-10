@@ -1,13 +1,10 @@
 import sys,os
-from src.configuration.config import ConfigManager
 
-from src.components.data_ingestion import DataIngestion
-from src.components.base_model import BaseModel
-from src.components.model_trainer import ModelTraining
 
-from src.pipeline.training_pipeline import DataIngestionTrainPipline
+from src.pipeline.data_ingestion_pipline import DataIngestionTrainPipline
 from src.pipeline.base_model_pipline import BaseModelPipline
 from src.pipeline.model_train_pipeline import ModelTrainPipeline
+from src.pipeline.model_eval_pipline import EvaluationPipline
 
 from src.logging.logger import logging
 from src.exception.exception import CustomException
@@ -37,13 +34,24 @@ except Exception as e:
         raise CustomException(sys,e) 
 
 Stage_Name3='Model Train'
-if __name__=="__main__":
-    try:
+
+try:
         logging.info(f"*******************")
         logging.info(f">>>>>> stage {Stage_Name3} started >>>>>>>>")
         obj=ModelTrainPipeline()
         obj.ModelTrainPipleline()
         logging.info(f">>>>>> stage {Stage_Name3} completed <<<<<<\n\nx==========x")
-    except Exception as e:
+except Exception as e:
         logging.exception(e)
-        raise CustomException(sys,e)    
+        raise CustomException(sys,e)  
+
+STAGE_NAME4 = "Evaluation stage"
+try:
+        logging.info(f"*******************")
+        logging.info(f">>>>>> stage {STAGE_NAME4} started <<<<<<")
+        obj = EvaluationPipline()
+        obj.main()
+        logging.info(f">>>>>> stage {STAGE_NAME4} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logging.info(e)
+        raise CustomException(sys,e)  

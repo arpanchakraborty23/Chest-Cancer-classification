@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Chest-Cancer-classification/mlruns/0/e505aedda757426f93414bb5fcf39cbb/artifacts
+end_time: 1712738277562
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e505aedda757426f93414bb5fcf39cbb
+run_name: learned-wren-189
+run_uuid: e505aedda757426f93414bb5fcf39cbb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712738257761
+status: 3
+tags: []
+user_id: ac

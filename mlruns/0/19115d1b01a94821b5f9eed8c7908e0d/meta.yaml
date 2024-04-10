@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Chest-Cancer-classification/mlruns/0/19115d1b01a94821b5f9eed8c7908e0d/artifacts
+end_time: 1712737981026
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 19115d1b01a94821b5f9eed8c7908e0d
+run_name: rebellious-grub-340
+run_uuid: 19115d1b01a94821b5f9eed8c7908e0d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712737980963
+status: 4
+tags: []
+user_id: ac

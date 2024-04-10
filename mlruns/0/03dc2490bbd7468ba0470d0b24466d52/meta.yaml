@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Chest-Cancer-classification/mlruns/0/03dc2490bbd7468ba0470d0b24466d52/artifacts
+end_time: 1712737806271
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 03dc2490bbd7468ba0470d0b24466d52
+run_name: agreeable-bat-650
+run_uuid: 03dc2490bbd7468ba0470d0b24466d52
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712737806239
+status: 4
+tags: []
+user_id: ac

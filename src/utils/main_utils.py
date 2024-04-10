@@ -50,16 +50,19 @@ def create_dir(path_to_dir: list, verbose=True):
             logging.info(f"created directory at: {path}")
     
 @ensure_annotations
-def save_json(path,data):
-    try:
-        with open(path,'w') as j:
-            json.dumps(data,j)
+def save_json(path: Path, data: dict):
+    """save json data
 
-            logging.info(f' Created dir {path}')
-    except BoxValueError as e:
-        logging.info('Erorr occured' ,str(e))
-        raise CustomException(sys,e)
-        
+    Args:
+        path (Path): path to json file
+        data (dict): data to be saved in json file
+    """
+    with open(path, "w") as f:
+        json.dump(data, f, indent=4)
+
+
+        logging.info(f' Created dir {path}')
+ 
 @ensure_annotations
 def load_json(path)-> ConfigBox:
     try:

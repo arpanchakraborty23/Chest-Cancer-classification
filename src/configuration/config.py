@@ -1,10 +1,10 @@
 from dataclasses  import dataclass
 import sys,os
 from src.constant import *
-from src.utils.main_utils import read_yaml,create_dir
+from src.utils.main_utils import read_yaml,create_dir,save_json
 
 from src.entity.config_entity import DataIngestionConfig,BaseModelConfig
-from src.entity.config_entity import ModelTrainConfig
+from src.entity.config_entity import ModelTrainConfig,EvaluationConfig
 from src.logging.logger import logging
 from src.exception.exception import CustomException
 
@@ -80,4 +80,21 @@ class ConfigManager:
             return train_config        
         except Exception as e:
             logging.info('error occured ', str(e))
-            raise CustomException(sys,e)             
+            raise CustomException(sys,e) 
+
+
+    def get_eval_config(self)-> EvaluationConfig:
+        try:
+            eval_config=EvaluationConfig(
+                path_of_model='model/model.h5',
+                train_data='artifacts\data_ingestion\Chest-CT-Scan-data',
+                mlflow_url='https://dagshub.com/arpanchakraborty23/Chest-Cancer-classification.mlflow',
+                all_params=self.param,
+                image_size=self.param.IMAGE_SIZE,
+                batch_size=self.param.BATCH_SIZE
+            )    
+
+            return eval_config                
+        except Exception as e:
+            logging.info('error occured ', str(e))
+            raise CustomException(sys,e) 
