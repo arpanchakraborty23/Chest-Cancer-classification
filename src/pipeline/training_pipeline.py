@@ -1,5 +1,5 @@
 import sys,os
-from src.configuration.config import DataIngestionConfig,ConfigManager
+from src.configuration.config import ConfigManager
 from src.components.data_ingestion import DataIngestion
 from src.logging.logger import logging
 from src.exception.exception import CustomException
@@ -21,6 +21,7 @@ class DataIngestionTrainPipline:
         except Exception as e:
             logging.info(f' Error occured {str(e)}')
             raise CustomException(sys,e)
+        
         
 if __name__=='__main__':
     try:
