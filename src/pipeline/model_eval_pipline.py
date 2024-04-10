@@ -17,7 +17,8 @@ class EvaluationPipline:
             eval_config=config.get_eval_config()
             evaluation=Evaluation(eval_config)
             evaluation.evaluation()
-            evaluation.log_to_mlflow()
+            evaluation.save_score()
+            # evaluation.log_to_mlflow()
 
         except Exception as e:
             logging.info(f'Error occured {str(e)}')
