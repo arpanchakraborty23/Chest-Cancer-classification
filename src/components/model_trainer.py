@@ -66,15 +66,23 @@ class ModelTraining:
     def train(self):
         self.steps_per_epoch = self.train_generator.samples // self.train_generator.batch_size
         self.validation_steps = self.valid_generator.samples // self.valid_generator.batch_size
+       
+        optimizer = tf.keras.optimizers.SGD(learning_rate=0.003)
+        loss=keras.losses.categorical_crossentropy
+
+        self.model.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
 
         self.model.fit(
-            self.train_generator,
-            epochs=self.config.epochs,
-            steps_per_epoch=self.steps_per_epoch,
-            validation_steps=self.validation_steps,
-            validation_data=self.valid_generator,
-        )
+        self.train_generator,
+        epochs=self.config.epochs,
+        steps_per_epoch=self.steps_per_epoch,
+        validation_steps=self.validation_steps,
+        validation_data=self.valid_generator
+    )
+
+
+
         self.save_model(
-            self.config.model_save_path,  # Assuming you have this attribute in your config
+            self.config.model_path,  
             self.model
         )
