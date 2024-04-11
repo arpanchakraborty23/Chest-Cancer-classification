@@ -17,7 +17,7 @@
 4. Model Evaluation
 
 ## Dagshub
-MLFLOW_TRACKING_URI=https://dagshub.com/arpanchakraborty23/Chest-Cancer-classification.mlflow \
-MLFLOW_TRACKING_USERNAME=arpanchakraborty23 \
-MLFLOW_TRACKING_PASSWORD=c0bea69b1b22e7ab1aa901fe69431974b56f94a6 \
+MLFLOW_TRACKING_URI=
+MLFLOW_TRACKING_USERNAME=
+MLFLOW_TRACKING_PASSWORD=
 python script.py

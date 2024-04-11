@@ -14,11 +14,12 @@ app=Flask(__name__)
 CORS(app)
 
 class ClientApp:
-    def __init__(self) -> None:
+    def __init__(self) :
         self.filename='InputImage.jpg'
         self.classifier=PradictionPipeline(self.filename)
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def home():
     return render_template('index.html')
 
@@ -26,6 +27,7 @@ def home():
 @cross_origin()
 def train():
     os.system('python main.py')
+    #os.system("dvc repro")
     return 'Train Successfully !'
 
 @app.route('/predict',methods=['POST'])
@@ -38,6 +40,6 @@ def predict():
 
 if __name__=='__main__':
     clapp=ClientApp()
-    app.run(port=5050)
+    app.run(port=5050,host='0.0.0.0')
 
 
