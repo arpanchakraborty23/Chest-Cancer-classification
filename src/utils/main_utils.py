@@ -99,14 +99,17 @@ def load_json(path):
 
 def get_size(path:str):
     size=round(os.path.getsize(path)/1024) 
+
+
     return size
 
+def decodeImage(imgstring, fileName):
+    imgdata = base64.b64decode(imgstring)
+    with open(fileName, 'wb') as f:
+        f.write(imgdata)
+        f.close()
 
-def decodeImage(imgstr,file):
-    img_data=base64.b64decode(imgstr)
-    with open(img_data,'wb') as img:
-        img.write(img_data)
-        img.close()
+
 
 def encodeImage(croppimagepath):
     with open(croppimagepath,'rb') as c:

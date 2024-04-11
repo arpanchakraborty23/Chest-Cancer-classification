@@ -1,5 +1,12 @@
 # 'Chest-Cancer-classification End to  End Project 
 
+## create env
+conda create -p env python==3.9 -y
+conda activate ./env
+
+## package creation
+pip install -r requirements.txt
+
 ## Workflows
 1. Update config.yaml
 2. Update params.yaml
@@ -20,4 +27,3 @@
 MLFLOW_TRACKING_URI=
 MLFLOW_TRACKING_USERNAME=
 MLFLOW_TRACKING_PASSWORD=
-python script.py

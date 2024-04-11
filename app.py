@@ -34,7 +34,8 @@ def train():
 @cross_origin()
 def predict():
     image=request.json['image']
-    decodeImage(image,clapp.filename)
+    # decodeImage(image,clapp.filename)
+    decodeImage(imgstring=image,fileName=clapp.filename)
     result=clapp.classifier.predict()
     return jsonify(result)
 
