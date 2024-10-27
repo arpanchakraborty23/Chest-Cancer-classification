@@ -2,8 +2,10 @@
 
 ## Problem Statement
 This project aims to develop a web API for classifying chest cancer based on patient health data, providing an early diagnostic tool to support healthcare professionals in treatment planning and preventative care.
+
 ## Goal
- 	Built a chest cancer classification web API using Image data of patient  to enable doctors early diagnosis and support treatment planning
+ 
+Built a chest cancer classification web API using Image data of patient  to enable doctors early diagnosis and support treatment planning
 
 ## create env
 ```bash
